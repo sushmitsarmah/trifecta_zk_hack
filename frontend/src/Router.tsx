@@ -10,7 +10,7 @@ import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
 import DemoTanstackQuery from "./routes/demo.tanstack-query";
 
 // import Header from "./components/Header";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/sections/navbar/default";
 import Home from "./pages/Home";
 
 import TanstackQueryLayout from "./integrations/tanstack-query/layout";
