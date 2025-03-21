@@ -1,4 +1,6 @@
-Welcome to your new TanStack app! 
+Welcome to your Darfecta! 
+
+[Darfecta Website](https://darfecta.netlify.app/)
 
 # Getting Started
 
@@ -25,11 +27,19 @@ This project uses [Vitest](https://vitest.dev/) for testing. You can run the tes
 bun run test
 ```
 
+## Deploy
+
+This project uses [Netlify](https://app.netlify.com/) for deployment. You can build site with:
+
+```bash
+bun run build
+```
+
+Build will be in dist folder
+
 ## Styling
 
-This project uses [Tailwind CSS](https://tailwindcss.com/) for styling.
-
-
+This project uses [Tailwind CSS](https://tailwindcss.com/) and [ShadCn](https://ui.shadcn.com/) for styling.
 
 
 
