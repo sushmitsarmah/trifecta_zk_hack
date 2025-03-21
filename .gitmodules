@@ -1,0 +1,3 @@
+[submodule "trifecta_hack_contracts"]
+	path = trifecta_hack_contracts
+	url = git@github.com:sushmitsarmah/trifecta_hack_contracts.git
