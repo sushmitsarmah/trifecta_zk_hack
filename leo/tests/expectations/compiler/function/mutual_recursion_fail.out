@@ -1,0 +1,25 @@
+namespace = "Compile"
+expectation = "Fail"
+outputs = ["""
+Error [ETYC0372043]: Cannot call a local transition function from a transition function.
+    --> compiler-test:13:16
+     |
+  13 |         return bax(n);
+     |                ^^^^^^
+Error [ETYC0372043]: Cannot call a local transition function from a transition function.
+    --> compiler-test:17:16
+     |
+  17 |         return baz(n);
+     |                ^^^^^^
+Error [ETYC0372042]: Only `inline` can be called from a `function` or `inline`.
+    --> compiler-test:5:16
+     |
+   5 |         return bar(n);
+     |                ^^^^^^
+Error [ETYC0372042]: Only `inline` can be called from a `function` or `inline`.
+    --> compiler-test:9:16
+     |
+   9 |         return foo(n);
+     |                ^^^^^^
+Error [ETYC0372059]: Cyclic dependency between functions: `baz` --> `bax` --> `baz`
+"""]

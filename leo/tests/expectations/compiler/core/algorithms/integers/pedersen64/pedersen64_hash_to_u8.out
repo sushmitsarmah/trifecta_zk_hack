@@ -1,0 +1,29 @@
+namespace = "Compile"
+expectation = "Fail"
+outputs = ["""
+Error [ETYC0372117]: Expected an integer of less than 64 bits or a bool but type `address` was found.
+    --> compiler-test:29:44
+     |
+  29 |         let a: u8 = Pedersen64::hash_to_u8(addr_value);
+     |                                            ^^^^^^^^^^
+Error [ETYC0372117]: Expected an integer of less than 64 bits or a bool but type `field` was found.
+    --> compiler-test:31:44
+     |
+  31 |         let c: u8 = Pedersen64::hash_to_u8(field_value);
+     |                                            ^^^^^^^^^^^
+Error [ETYC0372117]: Expected an integer of less than 64 bits or a bool but type `group` was found.
+    --> compiler-test:32:44
+     |
+  32 |         let d: u8 = Pedersen64::hash_to_u8(group_value);
+     |                                            ^^^^^^^^^^^
+Error [ETYC0372117]: Expected an integer of less than 64 bits or a bool but type `scalar` was found.
+    --> compiler-test:39:44
+     |
+  39 |         let o: u8 = Pedersen64::hash_to_u8(scalar_value);
+     |                                            ^^^^^^^^^^^^
+Error [ETYC0372117]: Expected an integer of less than 64 bits or a bool but type `Foo` was found.
+    --> compiler-test:41:44
+     |
+  41 |         let q: u8 = Pedersen64::hash_to_u8(Foo { a: 1u16, b: 1u16, });
+     |                                            ^^^^^^^^^^^^^^^^^^^^^^^^^
+"""]

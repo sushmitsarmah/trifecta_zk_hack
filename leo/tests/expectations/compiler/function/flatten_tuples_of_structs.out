@@ -1,0 +1,59 @@
+namespace = "Compile"
+expectation = "Pass"
+outputs = [[{ compile = [{ initial_ast = "cb7562eb6790c9575bdebee3bf93ea4ea82b5ae67adf4743fab755ef02816b79", unrolled_ast = "cb7562eb6790c9575bdebee3bf93ea4ea82b5ae67adf4743fab755ef02816b79", ssa_ast = "6f8bedeb17fbc7ab0bedae336d52e6c50b6e1d388c47807e128eebc386ef36bd", flattened_ast = "3775d01f9ef9eb186462484c82c7e2299abea4f21b2247cf7c51c6cd185846ea", destructured_ast = "3f160a89ae2d135006d3134e8a38da5428bd6ff299cfdcc5978e16d0a9968418", inlined_ast = "69487fa9fa59a1a90e00e4c1bd175f457f99747ffa182cb4bdc71dac8db57c92", dce_ast = "791008944c516410ef19ca7384c9ee11c40921cc0e2c4c20ae30d2cac47ad392", bytecode = """
+program test.aleo;
+
+struct Extra:
+    c as u8;
+
+struct Data:
+    a as u8;
+    b as u8;
+    c as Extra;
+
+closure foo:
+    input r0 as u8;
+    input r1 as u8;
+    cast r0 into r2 as Extra;
+    cast r0 r1 r2 into r3 as Data;
+    is.eq r0 r1 into r4;
+    add r0 r1 into r5;
+    sub r0 r1 into r6;
+    ternary r4 r0 r5 into r7;
+    ternary r4 r1 r6 into r8;
+    ternary r4 r3.a r3.a into r9;
+    ternary r4 r3.b r3.b into r10;
+    ternary r4 r3.c.c r3.c.c into r11;
+    cast r11 into r12 as Extra;
+    cast r9 r10 r12 into r13 as Data;
+    output r7 as u8;
+    output r8 as u8;
+    output r13 as Data;
+
+function bar:
+    input r0 as boolean.private;
+    input r1 as boolean.private;
+    input r2 as u8.private;
+    input r3 as u8.private;
+    call foo r2 r3 into r4 r5 r6;
+    call foo r4 r6.c.c into r7 r8 r9;
+    call foo r5 r6.b into r10 r11 r12;
+    call foo r6.a r5 into r13 r14 r15;
+    ternary r1 r10 r13 into r16;
+    ternary r1 r11 r14 into r17;
+    ternary r1 r12.a r15.a into r18;
+    ternary r1 r12.b r15.b into r19;
+    ternary r1 r12.c.c r15.c.c into r20;
+    cast r20 into r21 as Extra;
+    cast r18 r19 r21 into r22 as Data;
+    ternary r0 r7 r16 into r23;
+    ternary r0 r8 r17 into r24;
+    ternary r0 r9.a r22.a into r25;
+    ternary r0 r9.b r22.b into r26;
+    ternary r0 r9.c.c r22.c.c into r27;
+    cast r27 into r28 as Extra;
+    cast r25 r26 r28 into r29 as Data;
+    output r23 as u8.private;
+    output r24 as u8.private;
+    output r29 as Data.private;
+""", errors = "", warnings = "" }] }]]

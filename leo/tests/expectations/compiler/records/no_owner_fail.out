@@ -1,0 +1,19 @@
+namespace = "Compile"
+expectation = "Fail"
+outputs = ["""
+Error [ETYC0372019]: The `record` type requires the variable `owner: address`.
+    --> compiler-test:5:5
+     |
+   5 |     record Token {
+   6 |         // The token amount.
+   7 |         amount: u64,
+   8 |     }
+     |     ^
+Error [ETYC0372083]: A program must have at least one transition function.
+    --> compiler-test:1:1
+     |
+   1 | 
+   2 | 
+   3 | program test.aleo {    
+     | ^^^^^^^^^^^^
+"""]

@@ -1,0 +1,26 @@
+namespace = "Compile"
+expectation = "Pass"
+outputs = [[{ compile = [{ initial_ast = "03104c19e9ed72e8a73198b3b31ad021d6112bab9ce08100acd3c416154e115d", unrolled_ast = "cc5a932618da597110500400d5a9259cafcbb3a9ee274e6a26188e93d9c74a03", ssa_ast = "0b8f7c70d869a2b153c5fe166cb0165d2dbc1cfa81ae02a824320624cd3c8157", flattened_ast = "4416715ce110328f289215c38dbe884c32d6e9b99439cc344c3e8a845baca51b", destructured_ast = "11e48c6e206d6f4e4834860dce4e16b1871223c075f721f2b8d2da840336699a", inlined_ast = "11e48c6e206d6f4e4834860dce4e16b1871223c075f721f2b8d2da840336699a", dce_ast = "11e48c6e206d6f4e4834860dce4e16b1871223c075f721f2b8d2da840336699a", bytecode = """
+program test.aleo;
+
+record move:
+    owner as address.private;
+    incoming_fire_coordinate as u64.private;
+    player_1 as address.private;
+    player_2 as address.private;
+    prev_hit_or_miss as u64.private;
+
+function create_move:
+    input r0 as move.record;
+    input r1 as u64.private;
+    input r2 as u64.private;
+    is.eq r0.player_1 r0.owner into r3;
+    ternary r3 r0.player_2 r0.player_1 into r4;
+    cast r4 r1 r0.player_2 r0.player_1 r2 into r5 as move.record;
+    output r5 as move.record;
+
+function start_game:
+    input r0 as address.private;
+    cast r0 0u64 self.caller r0 0u64 into r1 as move.record;
+    output r1 as move.record;
+""", errors = "", warnings = "" }] }]]

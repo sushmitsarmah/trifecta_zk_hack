@@ -1,0 +1,29 @@
+namespace = "Compile"
+expectation = "Fail"
+outputs = ["""
+Error [ETYC0372117]: Expected an integer of less than 128 bits or a bool but type `address` was found.
+    --> compiler-test:29:51
+     |
+  29 |         let a: group = Pedersen128::hash_to_group(addr_value);
+     |                                                   ^^^^^^^^^^
+Error [ETYC0372117]: Expected an integer of less than 128 bits or a bool but type `field` was found.
+    --> compiler-test:31:51
+     |
+  31 |         let c: group = Pedersen128::hash_to_group(field_value);
+     |                                                   ^^^^^^^^^^^
+Error [ETYC0372117]: Expected an integer of less than 128 bits or a bool but type `group` was found.
+    --> compiler-test:32:51
+     |
+  32 |         let d: group = Pedersen128::hash_to_group(group_value);
+     |                                                   ^^^^^^^^^^^
+Error [ETYC0372117]: Expected an integer of less than 128 bits or a bool but type `scalar` was found.
+    --> compiler-test:41:51
+     |
+  41 |         let o: group = Pedersen128::hash_to_group(scalar_value);
+     |                                                   ^^^^^^^^^^^^
+Error [ETYC0372117]: Expected an integer of less than 128 bits or a bool but type `Foo` was found.
+    --> compiler-test:43:51
+     |
+  43 |         let p: group = Pedersen128::hash_to_group(Foo { a: 1u32, b: 1u32 });
+     |                                                   ^^^^^^^^^^^^^^^^^^^^^^^^
+"""]

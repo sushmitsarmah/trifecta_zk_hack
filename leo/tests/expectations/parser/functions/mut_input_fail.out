@@ -1,0 +1,8 @@
+namespace = "Parse"
+expectation = "Fail"
+outputs = ["""
+Error [EPAR0370005]: expected : -- found 'a'
+    --> test:4:20
+     |
+   4 |     function f(mut a: u8) {}}
+     |                    ^"""]

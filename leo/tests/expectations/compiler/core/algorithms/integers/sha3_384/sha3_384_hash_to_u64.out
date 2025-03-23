@@ -1,0 +1,21 @@
+namespace = "Compile"
+expectation = "Pass"
+outputs = [[{ compile = [{ initial_ast = "c7e57a0cdf92c76b8b50e8ec3d235cf608ff50280225ce74e96ca0c738d7f15f", unrolled_ast = "1e42ab1e2b1ca952a0de70f8694b97dc2ec4692b07fafac35220d4e14ee4ece5", ssa_ast = "7331419778cced71859cd51bfe7b38395ca81af582fa76945989bd8d3af05ec5", flattened_ast = "c2f2135a0a592c59dc8448663f0fcf9a5e92dd0db9f3140fdfdbe65fccdf4751", destructured_ast = "5072543e3112198814e5615f3b6319c524d5777a5a2d5902ccbaa39b385771c8", inlined_ast = "5072543e3112198814e5615f3b6319c524d5777a5a2d5902ccbaa39b385771c8", dce_ast = "cc54c1527eb11166c0218d33357200462cc9fc3163aa074c22a728d456aa9b52", bytecode = """
+program test.aleo;
+
+struct Foo:
+    a as u128;
+    b as u128;
+
+function main:
+    input r0 as i8.private;
+    input r1 as i16.private;
+    input r2 as i32.private;
+    input r3 as i64.private;
+    input r4 as u8.private;
+    input r5 as u16.private;
+    input r6 as u32.private;
+    input r7 as u64.private;
+    hash.sha3_384 aleo10qerras5799u6k7rjtc9y3hcwxuykr45qra7x7dp6jgnc0923czqm0lgta into r8 as u64;
+    output r8 as u64.private;
+""", errors = "", warnings = "" }] }]]

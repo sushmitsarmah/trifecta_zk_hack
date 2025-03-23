@@ -1,0 +1,8 @@
+namespace = "Compile"
+expectation = "Fail"
+outputs = ["""
+Error [EPAR0370005]: expected ; -- found ','
+    --> compiler-test:9:18
+     |
+   9 |         baz: [Baz, 2],
+     |                  ^"""]

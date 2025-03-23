@@ -1,0 +1,29 @@
+namespace = "Compile"
+expectation = "Fail"
+outputs = ["""
+Error [ETYC0372031]: A mapping's value cannot be a record
+    --> compiler-test:10:5
+     |
+  10 |     mapping tokens: address => Token;
+     |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error [ETYC0372117]: Expected type `address` but type `bool` was found.
+    --> compiler-test:17:30
+     |
+  17 |         Mapping::get(tokens, true);
+     |                              ^^^^
+Error [ETYC0372117]: Expected type `address` but type `bool` was found.
+    --> compiler-test:18:20
+     |
+  18 |         tokens.get(true);
+     |                    ^^^^
+Error [ETYC0372117]: Expected type `address` but type `u8` was found.
+    --> compiler-test:19:31
+     |
+  19 |         Mapping::get(amounts, 1u8);
+     |                               ^^^
+Error [ETYC0372117]: Expected type `address` but type `u8` was found.
+    --> compiler-test:20:21
+     |
+  20 |         amounts.get(1u8);
+     |                     ^^^
+"""]

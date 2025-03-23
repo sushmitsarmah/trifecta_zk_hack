@@ -1,0 +1,23 @@
+namespace = "Compile"
+expectation = "Fail"
+outputs = ["""
+Error [ETYC0372016]: Record Token defined with more than one variable with the same name.
+    --> compiler-test:4:5
+     |
+   4 |     record Token {
+   5 |         // The token owner.
+   6 |         owner: address,
+   7 |         // The token owner.
+   8 |         owner: address, // Cannot define two record variables with the same name.
+   9 |         // The token amount.
+  10 |         amount: u64,
+  11 |     }
+     |     ^
+Error [ETYC0372083]: A program must have at least one transition function.
+    --> compiler-test:1:1
+     |
+   1 | 
+   2 | 
+   3 | program test.aleo {    
+     | ^^^^^^^^^^^^
+"""]

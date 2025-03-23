@@ -1,0 +1,25 @@
+[package]
+name = "leo-abnf"
+version = "2.4.1"
+authors = [ "The Leo Team <leo@provable.com>" ]
+description = "ABNF to Markdown converter for the Leo programming language"
+homepage = "https://leo-lang.org"
+repository = "https://github.com/ProvableHQ/leo"
+keywords = [
+  "aleo",
+  "cryptography",
+  "leo",
+  "programming-language",
+  "zero-knowledge"
+]
+categories = [ "compilers", "cryptography", "web-programming" ]
+include = [ "Cargo.toml", "src", "README.md", "LICENSE.md" ]
+license = "GPL-3.0"
+edition = "2021"
+rust-version = "1.82.0"
+
+[dependencies.anyhow]
+version = "1.0"
+
+[dependencies.abnf]
+version = "0.13.0"

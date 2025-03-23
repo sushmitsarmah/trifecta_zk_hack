@@ -1,0 +1,45 @@
+namespace = "Compile"
+expectation = "Pass"
+outputs = [[{ compile = [
+    { initial_ast = "fada8aacb7d6f60f4c517f12a8bfb2d0c192dcad3af4720d4e4ef32b35aaf28a", unrolled_ast = "fada8aacb7d6f60f4c517f12a8bfb2d0c192dcad3af4720d4e4ef32b35aaf28a", ssa_ast = "b7646084b507cba895fb6c4d6bd7a69242f6be4fe568aa3f345d0abc1dd0f2fa", flattened_ast = "f7a43b22029fe91c14ee4d5d3efb8c88bb3ace6dc3a2036401071d91fb9474d4", destructured_ast = "467719935e2babebc5cafa5b3a21da6e6101810d163681adbd69d9c14d0b9bba", inlined_ast = "5bc72432dd452ed4c4ae0a7a3d98cbf7b1700e554ce02bfe283699f7fb592ca8", dce_ast = "5bc72432dd452ed4c4ae0a7a3d98cbf7b1700e554ce02bfe283699f7fb592ca8", bytecode = """
+program dependent.aleo;
+
+function t1:
+    async t1 1u8 into r0;
+    output r0 as dependent.aleo/t1.future;
+
+finalize t1:
+    input r0 as u8.public;
+    assert.eq 1u8 1u8;
+
+function t2:
+    async t2 1u8 into r0;
+    output r0 as dependent.aleo/t2.future;
+
+finalize t2:
+    input r0 as u8.public;
+    assert.eq 1u8 1u8;
+""", errors = "", warnings = "" },
+    { initial_ast = "84ea5eda60a0bbc735c3cb3d39401fa5ea05eaf03412d342c6325f10e20d3964", unrolled_ast = "e14c4af6d35f86ce52a5b5934f10d0c32bff9629f4fb1da9e341262b91c654b3", ssa_ast = "70a0338172d561b95e8c4408b6a384bd05ce69566168c23cdb2f6590e23ee20c", flattened_ast = "ec8fcd6acf7d30cb51c432a8c61aafc8dc1df122cde1dd043a7a19cc369d9954", destructured_ast = "ea9f1d0e0e2f9b20c5e18c133229fde59872f83bd57846ca7f480dbe1319b8e2", inlined_ast = "1ef97de002e6f9c961086fad3e19bd74ca93a4f1da701fd1b60d43259f8b97be", dce_ast = "5d1ae72d9bab2330ed83eb3144ddab08cd13c317de572a917204a077d2aa05ca", bytecode = """
+import dependent.aleo;
+program test.aleo;
+
+function t1:
+    call dependent.aleo/t1 into r0;
+    async t1 r0 into r1;
+    output r1 as test.aleo/t1.future;
+
+finalize t1:
+    input r0 as dependent.aleo/t1.future;
+    await r0;
+
+function t2:
+    call dependent.aleo/t2 into r0;
+    async t2 r0 into r1;
+    output r1 as test.aleo/t2.future;
+
+finalize t2:
+    input r0 as dependent.aleo/t2.future;
+    await r0;
+""", errors = "", warnings = "" },
+] }]]

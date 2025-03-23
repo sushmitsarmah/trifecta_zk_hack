@@ -1,0 +1,21 @@
+namespace = "Compile"
+expectation = "Fail"
+outputs = ["""
+Error [ETYC0372117]: Expected a field or integer but type `scalar` was found.
+    --> compiler-test:5:16
+     |
+   5 |         return a / b; // division not supported for scalar types.
+     |                ^
+Error [ETYC0372117]: Expected a field or integer but type `scalar` was found.
+    --> compiler-test:5:20
+     |
+   5 |         return a / b; // division not supported for scalar types.
+     |                    ^
+Error [ETYC0372083]: A program must have at least one transition function.
+    --> compiler-test:1:1
+     |
+   1 | 
+   2 | 
+   3 | program test.aleo {    
+     | ^^^^^^^^^^^^
+"""]

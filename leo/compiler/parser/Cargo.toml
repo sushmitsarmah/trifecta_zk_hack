@@ -1,0 +1,54 @@
+[package]
+name = "leo-parser"
+version = "2.4.1"
+authors = [ "The Leo Team <leo@provable.com>" ]
+description = "Parser for the Leo programming language"
+homepage = "https://leo-lang.org"
+repository = "https://github.com/ProvableHQ/leo"
+keywords = [
+  "aleo",
+  "cryptography",
+  "leo",
+  "programming-language",
+  "zero-knowledge"
+]
+categories = [ "compilers", "cryptography", "web-programming" ]
+include = [ "Cargo.toml", "src", "README.md", "LICENSE.md" ]
+license = "GPL-3.0"
+edition = "2021"
+rust-version = "1.82.0"
+
+[dependencies.leo-ast]
+workspace = true
+
+[dependencies.leo-errors]
+workspace = true
+
+[dependencies.leo-span]
+workspace = true
+
+[dependencies.snarkvm]
+workspace = true
+
+[dependencies.clap]
+version = "4.5"
+features = [ "derive" ]
+
+[dependencies.indexmap]
+workspace = true
+
+[dependencies.serde]
+workspace = true
+
+[dev-dependencies.leo-test-framework]
+path = "../../tests/test-framework"
+
+[dev-dependencies.serde_json]
+workspace = true
+
+[dev-dependencies.toml]
+workspace = true
+
+[features]
+default = [ ]
+ci_skip = [ ]

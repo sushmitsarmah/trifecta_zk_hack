@@ -1,0 +1,19 @@
+namespace = "Compile"
+expectation = "Fail"
+outputs = ["""
+Error [ETYC0372015]: Struct Bar defined with more than one member with the same name.
+    --> compiler-test:4:5
+     |
+   4 |     struct Bar {
+   5 |         x: u32,
+   6 |         x: u32,
+   7 |     }
+     |     ^
+Error [ETYC0372083]: A program must have at least one transition function.
+    --> compiler-test:1:1
+     |
+   1 | 
+   2 | 
+   3 | program test.aleo {    
+     | ^^^^^^^^^^^^
+"""]

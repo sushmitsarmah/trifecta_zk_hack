@@ -1,0 +1,16 @@
+namespace = "Compile"
+expectation = "Pass"
+outputs = [[{ compile = [{ initial_ast = "18290b69b1442dec9bcc309d17b3b0e0b43fd091bfd673a002171be339094901", unrolled_ast = "bd44d436d9767dcb37c16571c94540f1d9684cc80ea40fb5070ad148cd1a5c74", ssa_ast = "d10574460f9bf02504e84ac4f669d6af257e0331afce6752afb9b5d34fdf4831", flattened_ast = "6b74732354a381385d1f4b8d8a0801a6d1b15fc7ab92b52595349bcee7ae3f61", destructured_ast = "637d3d2c7b6df2fec7f9c89febba89e990576d4d76a6d503c9e3dfdaaa7ef87a", inlined_ast = "637d3d2c7b6df2fec7f9c89febba89e990576d4d76a6d503c9e3dfdaaa7ef87a", dce_ast = "637d3d2c7b6df2fec7f9c89febba89e990576d4d76a6d503c9e3dfdaaa7ef87a", bytecode = """
+program test.aleo;
+
+record Token:
+    owner as address.private;
+    amount as u64.private;
+
+function main:
+    input r0 as address.private;
+    input r1 as u64.private;
+    mul r1 r1 into r2;
+    cast r0 r2 into r3 as Token.record;
+    output r3 as Token.record;
+""", errors = "", warnings = "" }] }]]

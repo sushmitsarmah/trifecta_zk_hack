@@ -1,0 +1,16 @@
+namespace = "Compile"
+expectation = "Fail"
+outputs = ["""
+Error [ETYC0372005]: Unknown variable `b`
+    --> compiler-test:5:18
+     |
+   5 |     \tlet b: u8 = b;
+     |                  ^
+Error [ETYC0372083]: A program must have at least one transition function.
+    --> compiler-test:1:1
+     |
+   1 | 
+   2 | 
+   3 | program test.aleo {    
+     | ^^^^^^^^^^^^
+"""]

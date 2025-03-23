@@ -1,0 +1,20 @@
+namespace = "Compile"
+expectation = "Pass"
+outputs = [[{ compile = [{ initial_ast = "74f217b6c5e7a8b192fcece47a44e6ddbbd142c8d4dff924008c8da0d7a22e31", unrolled_ast = "fcc4bbebad9387899f66be7f3381907dd8a70d77231f347411b781fb6f6984b6", ssa_ast = "9abbf792dcaf2637018b2c0249964079af1e42a3b0d3ab1e4225e6b08ccb101e", flattened_ast = "7c79459ed33fbdb8e26125e6839146e6b6aba68f40b84c42f73727db55e8598e", destructured_ast = "f71ad359091d6738e903d6bff1456ae7e2045d09647e1ec48b898a3bc1f0853d", inlined_ast = "f71ad359091d6738e903d6bff1456ae7e2045d09647e1ec48b898a3bc1f0853d", dce_ast = "2a0592236245242e738177f44cd77ae09e013c162e2a51d43c36bd16d4c89f99", bytecode = """
+program test.aleo;
+
+struct Foo:
+    a as u128;
+    b as u128;
+
+function main:
+    input r0 as i8.private;
+    input r1 as i16.private;
+    input r2 as i32.private;
+    input r3 as i64.private;
+    input r4 as u8.private;
+    input r5 as u16.private;
+    input r6 as u32.private;
+    input r7 as u64.private;
+    output 1field as field.private;
+""", errors = "", warnings = "" }] }]]

@@ -1,0 +1,46 @@
+[package]
+name = "leo-errors"
+version = "2.4.1"
+authors = [ "The Leo Team <leo@provable.com>" ]
+description = "Errors for the Leo programming language"
+homepage = "https://leo-lang.org"
+repository = "https://github.com/ProvableHQ/leo"
+keywords = [
+  "aleo",
+  "cryptography",
+  "leo",
+  "programming-language",
+  "zero-knowledge"
+]
+categories = [ "compilers", "cryptography", "web-programming" ]
+include = [ "Cargo.toml", "src", "README.md", "LICENSE.md" ]
+license = "GPL-3.0"
+edition = "2021"
+rust-version = "1.82.0"
+
+[dependencies.leo-span]
+workspace = true
+
+[dependencies.anyhow]
+version = "1.0"
+
+[dependencies.backtrace]
+version = "0.3.74"
+
+[dependencies.colored]
+version = "2.0.4"
+
+[dependencies.color-backtrace]
+version = "0.6.1"
+
+[dependencies.derivative]
+version = "2.2.0"
+
+[dependencies.reqwest]
+version = "0.12.9"
+
+[dependencies.serde]
+workspace = true
+
+[dependencies.thiserror]
+version = "1.0.65"

@@ -1,0 +1,29 @@
+namespace = "Compile"
+expectation = "Fail"
+outputs = ["""
+Error [ETYC0372117]: Expected an integer of less than 64 bits or a bool but type `address` was found.
+    --> compiler-test:27:56
+     |
+  27 |         let a: address = Pedersen64::commit_to_address(addr_value, scalar_value);
+     |                                                        ^^^^^^^^^^
+Error [ETYC0372117]: Expected an integer of less than 64 bits or a bool but type `field` was found.
+    --> compiler-test:29:56
+     |
+  29 |         let c: address = Pedersen64::commit_to_address(field_value, scalar_value);
+     |                                                        ^^^^^^^^^^^
+Error [ETYC0372117]: Expected an integer of less than 64 bits or a bool but type `group` was found.
+    --> compiler-test:30:56
+     |
+  30 |         let d: address = Pedersen64::commit_to_address(group_value, scalar_value);
+     |                                                        ^^^^^^^^^^^
+Error [ETYC0372117]: Expected an integer of less than 64 bits or a bool but type `scalar` was found.
+    --> compiler-test:37:56
+     |
+  37 |         let m: address = Pedersen64::commit_to_address(scalar_value, scalar_value);
+     |                                                        ^^^^^^^^^^^^
+Error [ETYC0372117]: Expected an integer of less than 64 bits or a bool but type `Foo` was found.
+    --> compiler-test:39:56
+     |
+  39 |         let n: address = Pedersen64::commit_to_address(Foo { a: 1u16, b: 1u16 }, scalar_value);
+     |                                                        ^^^^^^^^^^^^^^^^^^^^^^^^
+"""]

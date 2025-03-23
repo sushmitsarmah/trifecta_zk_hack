@@ -1,0 +1,16 @@
+namespace = "Compile"
+expectation = "Fail"
+outputs = ["""
+Error [ETYC0372008]: The value -0x1 is not a valid `u8`
+    --> compiler-test:5:21
+     |
+   5 |         let a: u8 = -0x1u8;
+     |                     ^^^^^^
+Error [ETYC0372083]: A program must have at least one transition function.
+    --> compiler-test:1:1
+     |
+   1 | 
+   2 | 
+   3 | program test.aleo {    
+     | ^^^^^^^^^^^^
+"""]

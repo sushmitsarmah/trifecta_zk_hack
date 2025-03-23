@@ -1,0 +1,18 @@
+namespace = "Compile"
+expectation = "Fail"
+outputs = ["""
+Error [ETYC0372020]: The field `owner` in a `record` must have type `address`.
+    --> compiler-test:5:5
+     |
+   5 |     record Token {
+   6 |         owner: bool,
+   7 |     }
+     |     ^
+Error [ETYC0372083]: A program must have at least one transition function.
+    --> compiler-test:1:1
+     |
+   1 | 
+   2 | 
+   3 | program test.aleo {    
+     | ^^^^^^^^^^^^
+"""]

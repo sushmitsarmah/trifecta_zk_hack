@@ -1,0 +1,9 @@
+namespace = "Compile"
+expectation = "Fail"
+outputs = ["""
+Error [ETYC0372036]: Function must return a value.
+    --> compiler-test:4:5
+     |
+   4 |     transition main() -> u8 {}
+     |     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""]

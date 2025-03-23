@@ -1,0 +1,9 @@
+namespace = "Compile"
+expectation = "Fail"
+outputs = ["""
+Error [ETYC0372117]: Expected type `u32` but type `(address => bool)` was found.
+    --> compiler-test:7:22
+     |
+   7 |         let a: u32 = relay.aleo/users;
+     |                      ^^^^^^^^^^^^^^^^
+"""]

@@ -1,0 +1,25 @@
+namespace = "Compile"
+expectation = "Pass"
+outputs = [[{ compile = [{ initial_ast = "c793d5d450670bd09f83b857c7457bc2faf90bcc16748fb0c82e9147f2f9cedb", unrolled_ast = "c793d5d450670bd09f83b857c7457bc2faf90bcc16748fb0c82e9147f2f9cedb", ssa_ast = "288d3813c4ef1bda456b4ef0db6636bf6a605e2cc46d345d5d390d38aef6f154", flattened_ast = "5e683565cdee3b04e5c47f71fb1b8ab32b27ceb04ccfbd45a4c1903418cbc784", destructured_ast = "ad53d1bbdecd7d9cda9943327cac00d587398a85ee2d22d2abac1287ce8a2e8c", inlined_ast = "ad53d1bbdecd7d9cda9943327cac00d587398a85ee2d22d2abac1287ce8a2e8c", dce_ast = "ad53d1bbdecd7d9cda9943327cac00d587398a85ee2d22d2abac1287ce8a2e8c", bytecode = """
+program test.aleo;
+
+record Token:
+    owner as address.private;
+    amount as u64.private;
+
+function mint:
+    input r0 as address.private;
+    input r1 as u64.private;
+    cast r0 r1 into r2 as Token.record;
+    output r2 as Token.record;
+
+function transfer:
+    input r0 as Token.record;
+    input r1 as address.private;
+    input r2 as u64.private;
+    sub r0.amount r2 into r3;
+    cast r0.owner r3 into r4 as Token.record;
+    cast r1 r2 into r5 as Token.record;
+    output r4 as Token.record;
+    output r5 as Token.record;
+""", errors = "", warnings = "" }] }]]

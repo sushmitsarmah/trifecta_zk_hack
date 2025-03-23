@@ -1,0 +1,28 @@
+namespace = "Compile"
+expectation = "Pass"
+outputs = [[{ compile = [{ initial_ast = "be00d02ab3c3b889fc1842c26280c35c1d2811e8ad97dfe9aae939cb6e17528d", unrolled_ast = "6786a3fe7a1ff16f7e763e957a3639b3747760b44f68ee22d7bb70b508238dc3", ssa_ast = "671a0efcec6d306703e15bc1419a3aea2ab46950ac72d33b9ae5d4873e659555", flattened_ast = "3cba8ccc00b7aca789890a0f0e1048fa71fd2382967a0394fbb36cce6dcc4159", destructured_ast = "3d9e6e3de395a2e2dbe84a5ce7b35bee720564a57ff192bb917e85f46d74cc28", inlined_ast = "3712e27cf6467f8441330ba01fa1374b17cb640c8320189af89875ad8815d345", dce_ast = "3712e27cf6467f8441330ba01fa1374b17cb640c8320189af89875ad8815d345", bytecode = """
+program test.aleo;
+
+mapping account:
+    key as address.public;
+    value as u64.public;
+
+mapping values:
+    key as u8.public;
+    value as u8.public;
+
+function finalize_self_caller:
+    async finalize_self_caller self.caller into r0;
+    output r0 as test.aleo/finalize_self_caller.future;
+
+finalize finalize_self_caller:
+    input r0 as address.public;
+    get.or_use values[0u8] 0u8 into r1;
+    add r1 3u8 into r2;
+    add r2 1u8 into r3;
+    add r3 1u8 into r4;
+    set r4 into values[0u8];
+    get.or_use account[r0] 0u64 into r5;
+    add r5 1u64 into r6;
+    set r6 into account[r0];
+""", errors = "", warnings = "" }] }]]

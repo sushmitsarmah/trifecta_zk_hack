@@ -1,0 +1,13 @@
+namespace = "Compile"
+expectation = "Pass"
+outputs = [[{ compile = [{ initial_ast = "28000689cde1febdc24ecf2aa7352daaf95cae69a3c9282249a794f7fe45eb9f", unrolled_ast = "28000689cde1febdc24ecf2aa7352daaf95cae69a3c9282249a794f7fe45eb9f", ssa_ast = "8924faa4c6649e328ca68e6c24c6a2d0eb6e83bbdcc01a95889e2fa950a06bc9", flattened_ast = "42b538284a04f9e3dda825f4f1b82efc76be9dbdc056d6298ba387d921707b59", destructured_ast = "ea0b06d1ca64206d34367385c1c19a3750fae22239a037303b626c0606c63e09", inlined_ast = "ea0b06d1ca64206d34367385c1c19a3750fae22239a037303b626c0606c63e09", dce_ast = "ea0b06d1ca64206d34367385c1c19a3750fae22239a037303b626c0606c63e09", bytecode = """
+program test.aleo;
+
+function main:
+    input r0 as i8.private;
+    input r1 as i8.private;
+    input r2 as i8.private;
+    or r0 r1 into r3;
+    is.eq r3 r2 into r4;
+    output r4 as boolean.private;
+""", errors = "", warnings = "" }] }]]

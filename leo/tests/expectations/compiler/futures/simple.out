@@ -1,0 +1,41 @@
+namespace = "Compile"
+expectation = "Pass"
+outputs = [[{ compile = [
+    { initial_ast = "0a137d4df2ce8a6bb3c9b82e12856ba4769f6a0ee60b9d44fe4e5b112383accc", unrolled_ast = "0a137d4df2ce8a6bb3c9b82e12856ba4769f6a0ee60b9d44fe4e5b112383accc", ssa_ast = "2a1a92101ca526d604626f5ba6c0e4d032877119538e3f1f11a184d7e1c9820e", flattened_ast = "16987d115d2346155c394f964ddc7ad81d13c9f825a0e4e206c46bb7b3c3250f", destructured_ast = "e237c687b23978180a04086c93fd6e894743e0bf2a95d4de408b0e4d2ecfc636", inlined_ast = "479ac6fdc020109c406fa654f6e8bcbec37069b9b68ff63e39dbfa09c5a40f04", dce_ast = "479ac6fdc020109c406fa654f6e8bcbec37069b9b68ff63e39dbfa09c5a40f04", bytecode = """
+program test.aleo;
+
+mapping foo:
+    key as u32.public;
+    value as u32.public;
+
+function main_inner:
+    input r0 as u32.public;
+    input r1 as u32.private;
+    add r0 r1 into r2;
+    async main_inner into r3;
+    output r2 as u32.private;
+    output r3 as test.aleo/main_inner.future;
+
+finalize main_inner:
+    set 1u32 into foo[1u32];
+""", errors = "", warnings = "" },
+    { initial_ast = "90315edede362afca47bb3f8c861ab8bbbdb049ea56db7ebbbf8f20ce60aeb4a", unrolled_ast = "72f99f9f4f2d45ccbe0d07b6e4d819e4f56dc4035c82c5cb9508703a8ce9a36b", ssa_ast = "ed59497059c9dc1613aaf6144c46e0e47b6fbd5b021e921d59626d45c7285624", flattened_ast = "cfd74f0206be4d4776ba51c6ba7bf45d4e4b294064bbc65fceffb44fbbcd7d60", destructured_ast = "cadfa020ff54d55ee31c50178985b2d07d95f3d9e1152b585cef0673c4730f22", inlined_ast = "5caef85069ada05009e224d2101017b72fa1cca787ef423292fdfba5f6b18c51", dce_ast = "739c06923bbf6c4104b3b43ec1703a318b5ef99de4176f4657c8361a89cb0569", bytecode = """
+import test.aleo;
+program basic.aleo;
+
+function main:
+    input r0 as u32.public;
+    input r1 as u32.private;
+    add r0 r1 into r2;
+    call test.aleo/main_inner 1u32 1u32 into r3 r4;
+    async main r2 r4 into r5;
+    output r2 as u32.private;
+    output r5 as basic.aleo/main.future;
+
+finalize main:
+    input r0 as u32.public;
+    input r1 as test.aleo/main_inner.future;
+    await r1;
+    assert.eq r0 1u32;
+""", errors = "", warnings = "" },
+] }]]

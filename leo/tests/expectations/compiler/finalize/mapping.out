@@ -1,0 +1,32 @@
+namespace = "Compile"
+expectation = "Pass"
+outputs = [[{ compile = [{ initial_ast = "f3b8edfaace5f948258ce134f0159d8dc9c8e7ac8bccef23f33d3c32b6116c11", unrolled_ast = "f3b8edfaace5f948258ce134f0159d8dc9c8e7ac8bccef23f33d3c32b6116c11", ssa_ast = "503fec3e5c8a24811647f4190ad4ebf78af890f11db45cb888ac5c89a13b0b61", flattened_ast = "433eb2f5da1bdc374aa1ebce07e10abcae10e878f1aa0a05c6fde0df5e72a264", destructured_ast = "b600f418c7ff02dbebcf46941a18c8a0ef96725c5664f6f58163ca0e3074b02e", inlined_ast = "b600f418c7ff02dbebcf46941a18c8a0ef96725c5664f6f58163ca0e3074b02e", dce_ast = "b600f418c7ff02dbebcf46941a18c8a0ef96725c5664f6f58163ca0e3074b02e", bytecode = """
+program test.aleo;
+
+struct Token:
+    Owner as address;
+    balance as u128;
+
+struct Bar:
+    a as u128;
+
+struct Baz:
+    a as u128;
+
+mapping balances:
+    key as address.public;
+    value as u128.public;
+
+mapping tokens:
+    key as address.public;
+    value as Token.public;
+
+mapping foo:
+    key as Bar.public;
+    value as Baz.public;
+
+function matches:
+    input r0 as address.private;
+    is.eq self.caller r0 into r1;
+    output r1 as boolean.private;
+""", errors = "", warnings = "" }] }]]

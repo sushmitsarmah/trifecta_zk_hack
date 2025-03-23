@@ -1,0 +1,31 @@
+[package]
+name = "leo-span"
+version = "2.4.1"
+authors = [ "The Leo Team <leo@provable.com>" ]
+description = "Span handling for the Leo programming language"
+homepage = "https://leo-lang.org"
+repository = "https://github.com/ProvableHQ/leo"
+keywords = [
+  "aleo",
+  "cryptography",
+  "leo",
+  "programming-language",
+  "zero-knowledge"
+]
+categories = [ "compilers", "cryptography", "web-programming" ]
+include = [ "Cargo.toml", "src", "README.md", "LICENSE.md" ]
+license = "GPL-3.0"
+edition = "2021"
+rust-version = "1.82.0"
+
+[dependencies.indexmap]
+workspace = true
+
+[dependencies.fxhash]
+version = "0.2.1"
+
+[dependencies.scoped-tls]
+version = "1.0.1"
+
+[dependencies.serde]
+workspace = true

@@ -1,0 +1,35 @@
+namespace = "Compile"
+expectation = "Pass"
+outputs = [[{ compile = [{ initial_ast = "5cad29e66986839987f1d3269b7693923e90a9a25b757dd7d0e9dde489a1b1cf", unrolled_ast = "5cad29e66986839987f1d3269b7693923e90a9a25b757dd7d0e9dde489a1b1cf", ssa_ast = "f1bf8ff6c73eb9fedf14a73f4f7bacf0e630b4699dcf1d110c0bcaada5ab094e", flattened_ast = "4149c04fa5dafb54cc517ae5cae7f5bb46e0d48c7f19ddef762a62bb5dfdaf70", destructured_ast = "a240e68fd900d3b7e0ee696798fc2dacf13d90dea50b6e416d672e84ef7adf03", inlined_ast = "a240e68fd900d3b7e0ee696798fc2dacf13d90dea50b6e416d672e84ef7adf03", dce_ast = "8155ad8671b28c1a5394646bbd0773310cc2f710077c9fe1cd7ec9002dcec150", bytecode = """
+program test.aleo;
+
+record Token:
+    owner as address.private;
+    amount as u64.private;
+
+function mint_token:
+    input r0 as address.private;
+    input r1 as u64.private;
+    input r2 as field.private;
+    hash.psd2 r2 into r3 as field;
+    is.eq 7202470996857839225873911078012225723419856133099120809866608931983814353616field r3 into r4;
+    cast r0 r1 into r5 as Token.record;
+    cast r0 0u64 into r6 as Token.record;
+    ternary r4 r5.owner r6.owner into r7;
+    ternary r4 r5.amount r6.amount into r8;
+    cast r7 r8 into r9 as Token.record;
+    output r9 as Token.record;
+
+function mint_token2:
+    input r0 as address.private;
+    input r1 as u64.private;
+    input r2 as field.private;
+    hash.psd2 r2 into r3 as field;
+    is.eq 7202470996857839225873911078012225723419856133099120809866608931983814353616field r3 into r4;
+    cast r0 r1 into r5 as Token.record;
+    cast r0 0u64 into r6 as Token.record;
+    ternary r4 r5.owner r6.owner into r7;
+    ternary r4 r5.amount r6.amount into r8;
+    cast r7 r8 into r9 as Token.record;
+    output r9 as Token.record;
+""", errors = "", warnings = "" }] }]]
